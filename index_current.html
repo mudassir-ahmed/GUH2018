@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <!-- Required -->
+    <meta charset="utf-8">
+
+    <!-- Title -->
+    <title>TTT - Travel Through Time</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- JS -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/timeline.js"></script>
+
+    <style>
+
+    html {
+      box-sixing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #000000
+    }
+
+    div {
+      color: white;
+    }
+
+    #wrap-navbar	{
+	width: 100%; /* Spans the width of the page */
+	height: 50px;
+	margin: 0; /* Ensures there is no space between sides of the screen and the menu */
+	z-index: 99; /* Makes sure that the menu remains on top of other page elements */
+	position: relative;
+  list-style-type: none;
+}
+
+.navbar	{
+	height: 50px;
+  display: table;
+
+
+  padding: 0;
+	margin: auto;
+ /* Ensures that the menu doesn’t affect other elements */
+	border-right: 1px solid #111212;
+}
+
+.navbar li 	{
+		height: auto;
+		width: 150px;  /* Each menu item is 150px wide */
+		float: left;  /* This lines up the menu items horizontally */
+		text-align: center;  /* All text is placed in the center of the box */
+		list-style: none;  /* Removes the default styling (bullets) for the list */
+		font: normal 17px/1.2em Arial, Verdana, Helvetica;
+		padding: 0;
+		margin: 0;
+}
+
+.navbar a	{
+		padding: 14.8px 0px;  /* Adds a padding on the top and bottom so the text appears centered vertically */
+		text-decoration: none;  /* Removes the default hyperlink styling. */
+		color: #f2f2f2; /* Text color is white */
+		display: block;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.navbar li:hover a {
+  border-bottom: 2px solid #fff;
+}
+
+.navbar li ul 	{
+ 		display: none;  /* Hides the drop-down menu */
+ 		height: auto;
+ 		margin: 0; /* Aligns drop-down box underneath the menu item */
+ 		padding: 0; /* Aligns drop-down box underneath the menu item */
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+.navbar li ul li {
+	background-color: #f9f9f9;
+}
+
+.navbar li ul li a 	{
+	color: black;
+	}
+
+.navbar li ul li a:hover	{
+	background-color: #ddd;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.button {
+  font-size: 20px;
+  padding: 15px 40px;
+  border-radius: 20px;
+  border: 2px solid white;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  position: fixed;
+  bottom: 80px;
+  right: 80px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #c6c6c6;
+}
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="html-historic-element",
+         animation-type="fade",
+         animation-direction="top",
+         x-value="0",
+         y-value="0",
+         year="1990",
+         layer="1"
+         id="wrap-navbar"
+    >
+
+      <ul class="navbar">
+        <li><a href=""><img src="logo.png" height="15"/></a></li>
+        <li><a href="">Mac</a></li>
+        <li><a href="">iPad</a></li>
+        <li><a href="">iPhone</a></li>
+        <li><a href="">Watch</a></li>
+        <li><a href="">TV</a></li>
+        <li><a href="">Music</a></li>
+        <li><a href="">Support</a></li>
+      </ul>
+
+    </div>
+
+    <div class="html-historic-element",
+         animation-type="fade",
+         animation-direction="top",
+         x-value="0",
+         y-value="0",
+         year="1990",
+         layer="1",
+         id="wrap-navbar"
+    >
+
+    <img src="imac.png" class="center">
+
+    </div>
+
+    <div class="html-historic-element",
+         animation-type="fade",
+         animation-direction="top",
+         x-value="0",
+         y-value="0",
+         year="1990",
+         layer="1"
+         id="wrap-navbar"
+    >
+
+    <div>
+    <a href="" class="button" style="color:white">Buy Now ></a>
+    </div>
+
+  </body>
+</html>
