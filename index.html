@@ -22,13 +22,17 @@
 
     <div id="ie-window-container">
 
-      <div id="ie-window-draggable" class="ie-window">
+      <div id="ie-window-draggable">
 
         <div class="ie-window-frame">
 
         </div><!-- /.ie-window-frame -->
 
-      </div><!-- /.ie-window -->
+      </div><!-- /#ie-window-draggable -->
+
+      <div id="ie-crash-window-draggable">
+
+      </div><!-- /#ie-crash-window-draggable -->
 
     </div><!-- /#ie-window-container -->
 
@@ -51,16 +55,48 @@
         background-position: center;
       }
 
-      .ie-window {
+      #ie-window-draggable {
         border: 1px solid rgb(40, 40, 40);
         width: 800px;
         height: 600px;
+        z-index: 2;
+        position: absolute;
       }
 
       .ie-window-frame {
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.8 );
+      }
+
+      #ie-crash-window-draggable {
+        width: 419px;
+        height: 289px;
+        background-image: url("assets/img/ie-crashed.jpg");
+        background-size: cover;
+        background-position: center;
+        z-index: 2;
+        position: 3;
+      }
+
+      #ie-crash-window-draggable::before {
+        content: '';
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(146, 33, 33, 0);
+        transition: 0.3s;
+      }
+
+      #ie-crash-window-draggable:hover::before {
+        background-color: rgba(146, 33, 33, 0.8);
+      }
+
+      .ie-crash-window-draggable-hide {
+        display: none;
       }
 
     </style>
@@ -70,6 +106,20 @@
       $( "#ie-window-draggable" ).draggable({
         containment: "#ie-window-container"
       });
+
+      $( "#ie-crash-window-draggable" ).draggable({
+        containment: "#ie-window-container"
+      });
+
+      // hide ie-crash window error element by applying class on click
+      $( "#ie-crash-window-draggable" ).click(function() {
+        $( this ).addClass('ie-crash-window-draggable-hide');
+      });
+
+      // add windows xp error sound
+
+      // random ie-crash popup (probs in the center)
+
     </script>
 
     <div class="html-historic-element",
