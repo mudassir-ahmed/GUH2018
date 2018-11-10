@@ -20,13 +20,194 @@
   </head>
   <body>
 
+    <style>
+      #ie-window-frame-action-header {
+        height: 29px;
+        width: 100%;
+        background: rgb(32, 124, 249);
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+      }
+
+      #ie-window-frame-body {
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #ie-window-frame-footer {
+        width: 100%;
+        height: 24px;
+      }
+
+      #ie-window-frame-footer-container {
+        width: 100%;
+        height: 100%;
+        background-color: #f6f3ef;
+      }
+
+      #ie-window-frame-sub-action-links-header {
+
+      }
+
+      #ie-window-frame-sub-action-header-container-links {
+        background-image: url("assets/img/window_macro_controls.png");
+        height: 28px;
+        width: 400px;
+        background-position: center;
+        background-size: cover;
+      }
+
+      #ie-window-frame-sub-action-links-header-container {
+        height: 26px;
+        background-color: #f6f3ef;
+        border-bottom: 1px solid grey;
+      }
+
+      #ie-window-frame-sub-action-links-header-container ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      #ie-window-frame-sub-action-links-header-container ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 0;
+      }
+
+      #ie-window-frame-sub-action-links-header-container ul li:hover {
+        box-shadow: 0px 1px 0px 2px grey;
+        cursor: pointer;
+      }
+
+      #ie-window-frame-sub-action-links-header-container ul li:first-child {
+        padding-left: 12px;
+      }
+
+      #ie-window-frame-sub-action-links-header-container ul li a:link,
+      #ie-window-frame-sub-action-links-header-container ul li a:visited
+      {
+        display: block;
+        text-decoration: none;
+        font-size: 14px;
+        color: #000;
+        padding: 6px 6px;
+        line-height: 1;
+      }
+
+      #ie-window-frame-sub-action-links-header-container ul li a:active,
+      #ie-window-frame-sub-action-links-header-container ul li a:hover
+      {
+        text-decoration: underline;
+      }
+
+      #ie-window-frame-sub-action-header {
+
+      }
+
+      #ie-window-frame-sub-action-header-container {
+        height: 28px;
+        background-color: #f6f3ef;
+      }
+
+      #ie-window-frame-action-header,
+      #ie-window-frame-sub-action-links-header,
+      #ie-window-frame-sub-action-header,
+      #ie-window-frame-body,
+      #ie-window-frame-footer
+      {
+        display: table-row;
+      }
+
+      #ie-window-frame {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8 );
+        display: table;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+        overflow: hidden;
+      }
+
+      #ie-window-frame-action-header-title,
+      #ie-window-frame-action-header-controls
+      {
+        display: inline-block;
+      }
+
+      #ie-window-frame-action-header-title {
+        line-height: 1;
+        font-family: cursive;
+        font-weight: bold;
+        font-size: 15px;
+        padding: 7px;
+        color: #fff;
+      }
+
+      #ie-window-frame-action-header-controls {
+        background-image: url("assets/img/window_controls.png");
+        width: 69px;
+        height: 23px;
+        background-position: center;
+        background-size: cover;
+        float: right;
+        margin: 3px;
+      }
+
+
+    </style>
+
     <div id="ie-window-container">
 
       <div id="ie-window-draggable">
 
-        <div class="ie-window-frame">
+        <div id="ie-window-frame">
 
-        </div><!-- /.ie-window-frame -->
+          <div id="ie-window-frame-action-header">
+            <div id="ie-window-frame-action-header-title">TTT - Microsoft Internet Explorer</div>
+            <div id="ie-window-frame-action-header-controls"></div>
+          </div>
+
+          <div id="ie-window-frame-sub-action-links-header">
+
+            <div id="ie-window-frame-sub-action-links-header-container">
+
+              <ul>
+                <li><a href="#file">File</a></li>
+                <li><a href="#edit">Edit</a></li>
+                <li><a href="#view">View</a></li>
+                <li><a href="#favs">Favorites</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="javascript:launchInternetExplorerCrashError( true );">Help</a></li>
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div id="ie-window-frame-sub-action-header">
+
+            <div id="ie-window-frame-sub-action-header-container">
+
+              <div id="ie-window-frame-sub-action-header-container-links"></div>
+
+            </div>
+
+          </div>
+
+          <div id="ie-window-frame-body">
+
+          </div>
+
+          <div id="ie-window-frame-footer">
+
+            <div id="ie-window-frame-footer-container">
+
+            </div>
+
+          </div>
+
+        </div><!-- /#ie-window-frame -->
 
       </div><!-- /#ie-window-draggable -->
 
@@ -68,17 +249,10 @@
       }
 
       #ie-window-draggable {
-        border: 1px solid rgb(40, 40, 40);
         width: 800px;
         height: 600px;
         z-index: 2;
         position: absolute;
-      }
-
-      .ie-window-frame {
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8 );
       }
 
       #ie-crash-window-draggable {
@@ -221,7 +395,9 @@
       }
 
       // launches IE crash window in center
-      launchInternetExplorerCrashError( true );
+      //
+// DEBUG: temporary hiding our content
+// launchInternetExplorerCrashError( true );
 
       // centers ie browser window
       centerElement( $( "#ie-window-draggable" ) );
