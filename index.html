@@ -42,6 +42,12 @@
 
     </div><!-- /#ie-window-container -->
 
+    <!-- Background audio -->
+    <audio id="bg-audio" loop> <!-- autoplay on final version -->
+      <source src="assets/sfx/windows_xp_error_sound.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+
     <style>
 
       html,
@@ -148,6 +154,78 @@
     </style>
 
     <script>
+
+      // Required because of Chrome promise
+      // DEBUG: more info at https://developers.google.com/web/updates/2016/03/play-returns-promise
+      /*
+      var audioConfirmed = confirm("May we play some audo?");
+      if (audioConfirmed) document.getElementById('bg-audio').play();
+      */
+
+      // function from mudassirahmed.com - who is a collaborator on this project
+      function play_sfx(audio_location) {
+
+        // creates an audio element
+        var audio_element = document.createElement('AUDIO');
+
+        // sets source of file
+            audio_element.setAttribute('src', audio_location);
+
+          //audio_element.setAttribute('controls', 'controls');
+
+          // adds audio element to DOM
+          document.body.appendChild(audio_element);
+
+          // removes audio element after playback
+          audio_element.addEventListener('ended', function() {
+
+            audio_element.parentNode.removeChild(audio_element);
+
+          });
+
+          // plays the audio element
+          audio_element.play();
+
+      };
+
+      var ieCrashElement = $( "#ie-crash-window-draggable" );
+
+      // hide the IE crash window
+      ieCrashElement.addClass('ie-crash-window-draggable-hide');
+
+      // launches/shows error dialog
+      // MAYBE: launch in a new position
+      // only center if true
+      function launchInternetExplorerCrashError( center ) {
+        // makes the window center
+        if ( center ) {
+          centerElement( ieCrashElement );
+        }
+        // plays windows xp error sound
+        play_sfx('assets/sfx/windows_xp_error_sound.mp3');
+        // launches the window by removing hide CSS class
+        ieCrashElement.removeClass('ie-crash-window-draggable-hide');
+      };
+
+      // centers an element
+      function centerElement( element ) {
+        element.css({
+          left: ( $( window ).width() / 2 - element.width() / 2 ) + "px",
+          top: ( $( window ).height() / 2 - element.height() / 2 ) + "px"
+        });
+      };
+
+      // hides IE crash window
+      function hideCrashWindow() {
+        ieCrashElement.addClass('ie-crash-window-draggable-hide');
+      }
+
+      // launches IE crash window in center
+      launchInternetExplorerCrashError( true );
+
+      // centers ie browser window
+      centerElement( $( "#ie-window-draggable" ) );
+
       // documentation at https://jqueryui.com/draggable/
       $( "#ie-window-draggable" ).draggable({
         containment: "#ie-window-container"
@@ -159,10 +237,21 @@
 
       // hide ie-crash window error element by applying class on click
       $( "#ie-crash-window-draggable-close" ).click(function() {
-        $( "#ie-crash-window-draggable" ).addClass('ie-crash-window-draggable-hide');
+          hideCrashWindow();
       });
+
+      // when continue is press show IE-crash error in another position to annoy user
       $( "#ie-crash-window-draggable-continue" ).click(function() {
-        $( "#ie-crash-window-draggable" ).addClass('ie-crash-window-draggable-hide');
+
+        hideCrashWindow();
+
+        ieCrashElement.css({
+          left: ( $( window ).width() / 2 - ieCrashElement.width() / 2 ) * Math.random() + "px",
+          top: ( $( window ).height() / 2 - ieCrashElement.height() / 2 ) * Math.random() + "px"
+        });
+
+        launchInternetExplorerCrashError( );
+
       });
 
       // alert IE is not adavanced when button clicked
@@ -176,32 +265,7 @@
 
     </script>
 
-    <div class="html-historic-element",
-          animation-type="fade",
-          animation-direction="top",
-          x-value="0",
-          y-value="0",
-          year="1990",
-          layer="1"
-    >
-
-      <span>This is some random content<br>Check the console to see if its working</span>
-
-    </div>
-
-    <div class="html-historic-element",
-          animation-type="fly",
-          animation-direction="bottom",
-          x-value="200",
-          y-value="200",
-          year="1990",
-          layer="2"
-    >
-
-      <span>Lets win!</span>
-
-    </div>
-
+    <!-- example html use
     <div class="html-historic-element",
           animation-type="fly",
           animation-direction="right",
@@ -214,6 +278,7 @@
       <span>This is some random content<br>Check the console to see if its working</span>
 
     </div>
+    -->
 
   </body>
 </html>
