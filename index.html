@@ -32,6 +32,12 @@
 
       <div id="ie-crash-window-draggable">
 
+        <div id="ie-crash-window-draggable-close" title="close"></div>
+
+        <div id="ie-crash-window-draggable-continue" title="continue"></div>
+
+        <div id="ie-crash-window-draggable-advanced" title="advanced"></div>
+
       </div><!-- /#ie-crash-window-draggable -->
 
     </div><!-- /#ie-window-container -->
@@ -76,23 +82,63 @@
         background-size: cover;
         background-position: center;
         z-index: 2;
-        position: 3;
+        position: absolute;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
       }
 
-      #ie-crash-window-draggable::before {
+      #ie-crash-window-draggable-close {
         content: '';
         display: block;
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(146, 33, 33, 0);
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 19px;
+        height: 19px;
+        border-radius: 3px;
+        background-color: transparent;
         transition: 0.3s;
       }
 
-      #ie-crash-window-draggable:hover::before {
+      #ie-crash-window-draggable-close:hover {
         background-color: rgba(146, 33, 33, 0.8);
+        cursor: pointer;
+      }
+
+      #ie-crash-window-draggable-continue {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 21px;
+        right: 11px;
+        width: 98px;
+        height: 19px;
+        border-radius: 3px;
+        background-color: transparent;
+        transition: 0.3s;
+      }
+
+      #ie-crash-window-draggable-continue:hover {
+        background-color: rgba(23, 105, 193, 0.8);
+        cursor: pointer;
+      }
+
+      #ie-crash-window-draggable-advanced {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 21px;
+        left: 15px;
+        width: 73px;
+        height: 19px;
+        border-radius: 3px;
+        background-color: transparent;
+        transition: 0.3s;
+      }
+
+      #ie-crash-window-draggable-advanced:hover {
+        background-color: rgba(23, 105, 193, 0.8);
+        cursor: pointer;
       }
 
       .ie-crash-window-draggable-hide {
@@ -112,8 +158,16 @@
       });
 
       // hide ie-crash window error element by applying class on click
-      $( "#ie-crash-window-draggable" ).click(function() {
-        $( this ).addClass('ie-crash-window-draggable-hide');
+      $( "#ie-crash-window-draggable-close" ).click(function() {
+        $( "#ie-crash-window-draggable" ).addClass('ie-crash-window-draggable-hide');
+      });
+      $( "#ie-crash-window-draggable-continue" ).click(function() {
+        $( "#ie-crash-window-draggable" ).addClass('ie-crash-window-draggable-hide');
+      });
+
+      // alert IE is not adavanced when button clicked
+      $( "#ie-crash-window-draggable-advanced" ).click(function() {
+        alert( "Oops! Try Google Chrome" );
       });
 
       // add windows xp error sound
