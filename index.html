@@ -20,14 +20,56 @@
   </head>
   <body>
 
+    <div id="ie-window-container">
 
+      <div id="ie-window-draggable" class="ie-window">
+
+        <div class="ie-window-frame">
+
+        </div><!-- /.ie-window-frame -->
+
+      </div><!-- /.ie-window -->
+
+    </div><!-- /#ie-window-container -->
 
     <style>
+
+      html,
+      body
+      {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      #ie-window-container {
+        width: 100%;
+        height: 100%;
+        background-image: url('assets/img/windows-xp-background.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .ie-window {
+        border: 1px solid rgb(40, 40, 40);
+        width: 800px;
+        height: 600px;
+      }
+
+      .ie-window-frame {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8 );
+      }
 
     </style>
 
     <script>
-
+      // documentation at https://jqueryui.com/draggable/
+      $( "#ie-window-draggable" ).draggable({
+        containment: "#ie-window-container"
+      });
     </script>
 
     <div class="html-historic-element",
