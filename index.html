@@ -20,170 +20,6 @@
   </head>
   <body>
 
-    <style>
-      #ie-window-frame-current-year {
-        position: absolute;
-        right: 10px;
-        top: 60px;
-        background: #fff;
-      }
-
-      #ie-window-frame-current-year-content {
-        color: rgba(0, 0, 0, 0.8);
-        display: inline-block;
-      }
-
-      #ie-window-frame-current-year-label {
-        font-size: 14px;
-        display: inline-block;
-      }
-
-      #ie-window-frame-action-header {
-        height: 29px;
-        width: 100%;
-        background: rgb(32, 124, 249);
-        border-top-left-radius: 6px;
-        border-top-right-radius: 6px;
-      }
-
-      #ie-window-frame-body {
-        height: 100%;
-        box-sizing: border-box;
-      }
-
-      #ie-window-frame-body-inner {
-        height: 100%;
-        width: 100%;
-        overflow: auto;
-      }
-
-      #ie-window-frame-body-inner-inner {
-        height: 1476px; /* 492*3 */
-      }
-
-      #ie-window-frame-footer {
-        width: 100%;
-        height: 24px;
-      }
-
-      #ie-window-frame-footer-container {
-        width: 100%;
-        height: 100%;
-        background-color: #f6f3ef;
-      }
-
-      #ie-window-frame-sub-action-links-header {
-
-      }
-
-      #ie-window-frame-sub-action-header-container-links {
-        background-image: url("assets/img/window_macro_controls.png");
-        height: 28px;
-        width: 400px;
-        background-position: center;
-        background-size: cover;
-      }
-
-      #ie-window-frame-sub-action-links-header-container {
-        height: 26px;
-        background-color: #f6f3ef;
-        border-bottom: 1px solid grey;
-      }
-
-      #ie-window-frame-sub-action-links-header-container ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-      }
-
-      #ie-window-frame-sub-action-links-header-container ul li {
-        list-style: none;
-        display: inline-block;
-        padding: 0;
-      }
-
-      #ie-window-frame-sub-action-links-header-container ul li:hover {
-        box-shadow: 0px 1px 0px 2px grey;
-        cursor: pointer;
-      }
-
-      #ie-window-frame-sub-action-links-header-container ul li:first-child {
-        padding-left: 12px;
-      }
-
-      #ie-window-frame-sub-action-links-header-container ul li a:link,
-      #ie-window-frame-sub-action-links-header-container ul li a:visited
-      {
-        display: block;
-        text-decoration: none;
-        font-size: 14px;
-        color: #000;
-        padding: 6px 6px;
-        line-height: 1;
-      }
-
-      #ie-window-frame-sub-action-links-header-container ul li a:active,
-      #ie-window-frame-sub-action-links-header-container ul li a:hover
-      {
-        text-decoration: underline;
-      }
-
-      #ie-window-frame-sub-action-header {
-
-      }
-
-      #ie-window-frame-sub-action-header-container {
-        height: 28px;
-        background-color: #f6f3ef;
-      }
-
-      #ie-window-frame-action-header,
-      #ie-window-frame-sub-action-links-header,
-      #ie-window-frame-sub-action-header,
-      #ie-window-frame-body,
-      #ie-window-frame-footer
-      {
-        display: table-row;
-      }
-
-      #ie-window-frame {
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8 );
-        display: table;
-        border-top-right-radius: 6px;
-        border-top-left-radius: 6px;
-        overflow: hidden;
-      }
-
-      #ie-window-frame-action-header-title,
-      #ie-window-frame-action-header-controls
-      {
-        display: inline-block;
-      }
-
-      #ie-window-frame-action-header-title {
-        line-height: 1;
-        font-family: cursive;
-        font-weight: bold;
-        font-size: 15px;
-        padding: 7px;
-        color: #fff;
-      }
-
-      #ie-window-frame-action-header-controls {
-        background-image: url("assets/img/window_controls.png");
-        width: 69px;
-        height: 23px;
-        background-position: center;
-        background-size: cover;
-        float: right;
-        margin: 3px;
-      }
-
-
-    </style>
-
     <div id="ie-window-container">
 
       <div id="ie-window-draggable">
@@ -197,7 +33,7 @@
             </div>
 
             <div id="ie-window-frame-current-year-content">
-              1880
+              1990
             </div>
 
           </div>
@@ -247,7 +83,7 @@
 
 
 
-
+                <!--
                 <div class="html-historic-element",
                       animation-type="fade",
                       animation-direction="right",
@@ -285,12 +121,107 @@
 
                   <span>This is random content for 2018</span>
 
+                </div>-->
+
+
+                <div class="html-historic-element heading",
+                      animation-type="fade",
+                      animation-direction="top",
+                      x-value="10",
+                      y-value="600",
+                      year="1990",
+                      layer="1">
+                 <center>
+                    <img src='logo90move.gif' id = 'logo'>
+                     <font color = 'white'><h1><b>PINEAPPLE</b></h1></font>
+                </center>
+
                 </div>
+
+
+
+
+                <div class="html-historic-element links",
+                      animation-type="fade",
+                      animation-direction="bottom",
+                      x-value="0",
+                      y-value="550",
+                      year="1990",
+                      layer="2">
+                    <center>
+                    <font color = 'red'>
+                    <p>Product Disinformation</p>
+                    </font>
+                    <font color = 'orange'>
+                    <p>Customer Unsupport</p>
+                    </font>
+                    <font color = 'yellow'>
+                    <p>Developer Hell</p>
+                    </font>
+                    <font color = 'green'>
+                    <p>Groups of Disinterest</p>
+                    </font>
+                    <font color = 'blue'>
+                    <p>Resources Offline</p>
+                    </font>
+                    <font color = 'purple'>
+                    <p>Proud to Bee</p>
+                    </font>
+                    <font color = 'red'>
+                    <p>DontPhone</p>
+                    <p>DontPad</p>
+                    <p>DontWatch</p>
+                    <p>DontMusic</p>
+                    </font>
+
+                    <hr>
+
+                    <i>We are an American Company!</i>
+
+                    <br>
+
+                    <img src='us.gif' width = 190 px>
+                    <p><a href='hohoho'>Truth</a> | <a href='hohoho'>or</a> | <a href='hohoho'>Consequences</a></p>
+                    </center>
+
+                </div>
+
+
+
+
+                <div class="html-historic-element context",
+                      animation-type="fade",
+                      animation-direction="right",
+                      x-value="200",
+                      y-value="550",
+                      year="1990",
+                      layer="1"
+                >
+
+                    <div id = "hot"><b><h2>What's Hot:</h2></b></div>
+
+
+                    <center><img src='steav.gif' id = 'mac1990'></center>
+
+                    <i>Buy bytes to bite bats!</i>
+                    <p>Meet the new TheComputer 2.0! We did it! <b>It containts 20 bytes more than previous model</b>! Now you can train a CNN to solve MNIST just in <b>ten years</b>! That's amazing! Buy it now and get <b>one more byte totally free!</b></p>
+
+                    <p>"<i>Amazing!</i>" <b>RealPerson_1</b></p>
+                    <p>"<i>Astonishing!</i>" <b>RealPerson_2</b></p>
+                    <p>"<i>Abominable!</i>" <b>NotRealPerson_1</b></p>
+
+                    <hr>
+
+                    <p>If you want to know more...just <a href = 'lie'>don't.</a></p>
+                  </div>
+
+
 
 <style>
 
 /* html-historic-element-animate-<transition_style>-<timeline_direction>-<direction_if_appicable> */
 
+/*
 .html-historic-element {
   background: red;
   padding: 20px;
@@ -314,7 +245,7 @@
 .html-historic-element:nth-child(3) {
   background-color: pink;
   top: 180px;
-}
+}*/
 
 .html-historic-element-animate-fade-hide {
   transform: scale(0);
