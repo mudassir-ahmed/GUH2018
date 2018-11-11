@@ -161,3 +161,97 @@
    float: right;
    margin: 3px;
  }
+
+ html,
+ body
+ {
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   height: 100%;
+ }
+
+ #ie-window-container {
+   width: 100%;
+   height: 100%;
+   background-image: url('../img/windows-xp-background.jpg');
+   background-size: cover;
+   background-position: center;
+ }
+
+ #ie-window-draggable {
+   width: 800px;
+   height: 600px;
+   z-index: 2;
+   position: absolute;
+ }
+
+ #ie-crash-window-draggable {
+   width: 419px;
+   height: 289px;
+   background-image: url("../img/ie-crashed.jpg");
+   background-size: cover;
+   background-position: center;
+   z-index: 2;
+   position: absolute;
+   border-top-left-radius: 8px;
+   border-top-right-radius: 8px;
+ }
+
+ #ie-crash-window-draggable-close {
+   content: '';
+   display: block;
+   position: absolute;
+   top: 6px;
+   right: 6px;
+   width: 19px;
+   height: 19px;
+   border-radius: 3px;
+   background-color: transparent;
+   transition: 0.3s;
+ }
+
+ #ie-crash-window-draggable-close:hover {
+   background-color: rgba(146, 33, 33, 0.8);
+   cursor: pointer;
+ }
+
+ #ie-crash-window-draggable-continue {
+   content: '';
+   display: block;
+   position: absolute;
+   bottom: 21px;
+   right: 11px;
+   width: 98px;
+   height: 19px;
+   border-radius: 3px;
+   background-color: transparent;
+   transition: 0.3s;
+ }
+
+ #ie-crash-window-draggable-continue:hover {
+   background-color: rgba(23, 105, 193, 0.8);
+   cursor: pointer;
+ }
+
+ #ie-crash-window-draggable-advanced {
+   content: '';
+   display: block;
+   position: absolute;
+   bottom: 21px;
+   left: 15px;
+   width: 73px;
+   height: 19px;
+   border-radius: 3px;
+   background-color: transparent;
+   transition: 0.3s;
+ }
+
+ #ie-crash-window-draggable-advanced:hover {
+   background-color: rgba(23, 105, 193, 0.8);
+   cursor: pointer;
+ }
+
+ .ie-crash-window-draggable-hide {
+   display: none;
+ }
