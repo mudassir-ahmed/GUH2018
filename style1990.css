@@ -1,0 +1,64 @@
+html {
+    background-image: url("wow.gif");
+    
+}
+
+#hot {
+    background-image: url("fire.gif");
+    width: 600px;
+    padding-bottom: 100px;
+}
+
+#logo {
+    width: 45px;
+    float: left;
+    padding-left: 30px;
+}
+
+
+#mac1990 {
+    align-items: center; 
+    width: 400px;
+}
+
+.heading {
+    width: 800px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: black;
+    border: 1px solid black;
+}
+
+p.heading {   
+    font-size: 28;
+}
+
+
+.links {
+    border: 1px solid black;
+    width: 200px;
+    font-size: 12;
+    float: left;
+    background-color: rgba(255,255,255,0.8);
+}
+
+
+
+
+.context {
+    border: 1px solid black;
+    width: 600px;
+    float: left;
+    background-color: rgba(255,255,255,0.8);
+}
+
+
+
+
+
+li#menu {
+    display: inline-block;
+    font-size: 12;
+    background-color: #415494;
+    margin: 0 10 0;
+   }
