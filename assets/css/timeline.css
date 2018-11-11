@@ -2,6 +2,21 @@
  * This file contains all the styles required for the
  * timeline html elements
  */
+
+.html-historic-element {
+  transition: 0.8s;
+  position: fixed;
+  transform-origin: center;
+}
+
+.html-historic-element-animate-fade-hide {
+  transform: scale(0);
+}
+
+.html-historic-element-animate-fade-show {
+  transform: scale(1);
+}
+
  #ie-window-frame-current-year {
    position: absolute;
    right: 10px;
@@ -40,6 +55,8 @@
 
  #ie-window-frame-body-inner-inner {
    height: 1476px; /* 492*3 */
+   position: relative;
+   z-index: 10;
  }
 
  #ie-window-frame-footer {
